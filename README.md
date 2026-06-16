@@ -32,7 +32,7 @@ A static **UI Design Showcase** gallery that renders **112 UI design styles** ac
 ## Suggested Content-Security-Policy
 
 ```
-default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; frame-ancestors 'self' https://umutkorkmaz.net https://*.umutkorkmaz.net
+default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; frame-ancestors 'self' https://umutkorkmaz.net https://*.umutkorkmaz.net
 ```
 
 Notes:

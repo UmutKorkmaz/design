@@ -1375,9 +1375,9 @@
 
   // src/index.ts
   var REACT_URL = "/vendor/react.18.3.1.min.js";
-  var REACT_SRI = "sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z";
+  var REACT_SRI = "";
   var REACT_DOM_URL = "/vendor/react-dom.18.3.1.min.js";
-  var REACT_DOM_SRI = "sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1";
+  var REACT_DOM_SRI = "";
   function hideRawTemplate() {
     const s = document.createElement("style");
     s.textContent = "x-dc{display:none!important}";
@@ -1388,7 +1388,7 @@
       //! nosemgrep: create-script-element
       const s = document.createElement("script");
       s.src = src;
-      s.integrity = integrity;
+      if (integrity) s.integrity = integrity;
       s.crossOrigin = "anonymous";
       s.async = false;
       s.onload = () => resolve2();

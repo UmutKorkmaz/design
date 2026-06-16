@@ -1,1 +1,6 @@
-default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; frame-ancestors 'self' https://umutkorkmaz.net https://*.umutkorkmaz.net
+default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; frame-ancestors 'self' https://umutkorkmaz.net https://*.umutkorkmaz.net
+# Notes:
+#  - script-src needs 'unsafe-eval': the dc-runtime evaluates template logic classes (generated bundle, same-origin + trusted).
+#  - style-src needs 'unsafe-inline': the runtime injects inline styles.
+#  - No SRI/integrity on vendored /vendor/* scripts: they are same-origin files we control; integrity only matters for third-party CDNs.
+#  - Cloudflare's auto-injected insights beacon is intentionally blocked by this CSP (privacy-first).
